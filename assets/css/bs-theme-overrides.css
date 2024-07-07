@@ -99,16 +99,18 @@ header.masthead {
 
 .input {
   min-height: 50px;
-  width: 400px; /* Adjust the maximum width */
+  width: 60%; /* Adjust the maximum width */
   padding: 0 1rem;
   color: #fff;
   font-size: 15px;
   border: 1px solid #5e4dcd;
   border-radius: 6px 0 0 6px;
   background-color: transparent;
+  font-weight: bolder;
 }
 
 .button--submit {
+  width: 40%;
   min-height: 50px;
   padding: .5em 1em;
   border: none;
