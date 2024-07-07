@@ -155,3 +155,35 @@ header.masthead {
   height: 50px; /* Set the desired height */
   max-height: 100%; /* Ensure it doesn't exceed the container's height */
 }
+.dropdown_menu {
+  display: none; /* Hide by default */
+  position: absolute;
+  right: 2rem;
+  top: 60px;
+  width: 300px; 
+  background-color: rgb(235, 187, 84);
+  backdrop-filter: blur(15px);
+  overflow: hidden;
+  transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown_menu.open {
+  display: block; /* Show when open */
+  height: 190px;
+}
+
+.dropdown_menu li {
+  padding: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (min-width: 992px) {
+  .dropdown_menu {
+    display: none !important;
+  }
+
+  .navbar-collapse {
+    display: flex !important; /* Ensure the navbar collapse is always shown on large screens */
+  }
+}

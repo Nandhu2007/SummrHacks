@@ -28,7 +28,7 @@
             .navbar-toggler.collapsed + .navbar-nav {
                 display: block;
             }
-
+          
             .navbar-nav.ms-auto::before {
                 content: '\2022 \2022 \2022';
                 display: block;
@@ -39,6 +39,8 @@
             }
         }
     </style>
+
+
 </head>
 
 <body id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="34">
@@ -59,6 +61,13 @@
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
             </div>
+        </div>            
+        </div>
+        <div class= "dropdown_menu">
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
         </div>
     </nav>
     <header class="masthead" style="background-image: url('assets/gradient-svg.svg');">
@@ -310,6 +319,15 @@
     </footer>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/script.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const navToggle = document.querySelector('.navbar-toggler');
+            const navDropdown = document.querySelector('.dropdown_menu');
+            navToggle.addEventListener('click', function() {
+                navDropdown.classList.toggle('open');
+            });
+        });
+    </script>
 </body>
 
 </html>
