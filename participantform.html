@@ -8,12 +8,22 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap">
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/css/bs-theme-overrides.css">
+    <link rel="stylesheet" href="assets/css/form.css">
+    <style>
+        .masthead {
+            padding-top: 60px;
+            padding-bottom: 0;
+            background-image: url('assets/gradient-svg.svg');
+        }
+        #participant-form .container {
+            margin-top: -120px;
+        }
+    </style>
 </head>
 <body id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="34">
     <nav class="navbar navbar-expand-lg fixed-top bg-dark navbar-dark" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="#page-top">
                 <img src="assets/img/logo.png" alt="Logo" class="navbar-logo">
             </a>
             <button data-bs-toggle="collapse" data-bs-target="#navbarResponsive" class="navbar-toggler collapsed" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,110 +31,88 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto text-uppercase">
-                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                    <li class="nav-item"><a class="nav-link" href="sponsorForm.html">Sponsor Form</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Back</a></li>
+
                 </ul>
             </div>
-            <div class="dropdown_menu">
-                <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
-                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                <li class="nav-item"><a class="nav-link" href="sponsorForm.html">Sponsor Form</a></li>
-            </div>
+        </div>
+        <div class="dropdown_menu">
+            <li class="nav-item"><a class="nav-link" href="index.html">Back</a></li>
+
         </div>
     </nav>
-    
-    <header class="masthead" style="height: 20%;">
+
+    <header class="masthead" style="height:100%; background-image: url('assets/gradient-svg.svg');">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-12 text-center">
                     <h2 class="text-uppercase section-heading" style="color: black;">Participant Form</h2>
+                    <p class="lead">We'll Contact with Info as soon as Possible</p>
                 </div>
             </div>
         </div>
+
+        <section id="participant-form">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <form id="participantForm" name="participantForm">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Name</label>
+                                <input class="form-control" type="text" id="name" name="name" placeholder="Your Name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="school" class="form-label">School</label>
+                                <input class="form-control" type="text" id="school" name="school" placeholder="Your School" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="grade" class="form-label">Grade</label>
+                                <select class="form-control" id="grade" name="grade" required>
+                                    <option value="" disabled selected>Select your Grade</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input class="form-control" type="email" id="email" name="email" placeholder="Your Email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="linkedin" class="form-label">LinkedIn Profile (if applicable)</label>
+                                <input class="form-control" type="url" id="linkedin" name="linkedin" placeholder="LinkedIn Profile Link">
+                            </div>
+                            <div class="mb-3">
+                                <label for="phone" class="form-label">Phone Number</label>
+                                <input class="form-control" type="tel" id="phone" name="phone" placeholder="Your Phone Number" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="experience" class="form-label">Experience Level</label>
+                                <select class="form-control" id="experience" name="experience" required>
+                                    <option value="" disabled selected>Select your experience level</option>
+                                    <option value="novice">Novice</option>
+                                    <option value="intermediate">Intermediate</option>
+                                    <option value="advanced">Advanced</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="hackathons" class="form-label">Number of Hackathons Attended</label>
+                                <input class="form-control" type="number" id="hackathons" name="hackathons" placeholder="Number of Hackathons" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="dietary" class="form-label">Dietary Restrictions</label>
+                                <input class="form-control" type="text" id="dietary" name="dietary" placeholder="Dietary Restrictions">
+                            </div>
+                            <div class="col-lg-12 text-center">
+                                <button class="btn btn-primary btn-xl text-uppercase" id="sendParticipantFormButton" type="submit">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
     </header>
-
-    <section id="participant-form" style="background-color: #f8f9fa; padding: 40px 0;">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <form id="participantForm" name="participantForm" >
-                        <div class="mb-3">
-                            <label for="name" class="form-label">Name</label>
-                            <input class="form-control" type="text" id="name" name="name" placeholder="Your Name" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="school" class="form-label">School</label>
-                            <input class="form-control" type="text" id="school" name="school"  placeholder="Your School" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="grade" class="form-label">Grade</label>
-                            <select class="form-control" id="grade" name="grade" required>
-                                <option value="" disabled selected>Select your Grade</option>
-                                <option value="novice">9</option>
-                                <option value="intermediate">10</option>
-                                <option value="advanced">11</option>
-                                <option value="advanced">12</option>
-
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email</label>
-                            <input class="form-control" type="email" id="email" name="email"  placeholder="Your Email"required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="linkedin" class="form-label">LinkedIn Profile (if applicable)</label>
-                            <input class="form-control" type="url" id="linkedin" name="linkedin" placeholder="LinkedIn Profile Link">
-                        </div>
-                        <div class="mb-3">
-                            <label for="phone" class="form-label">Phone Number</label>
-                            <input class="form-control" type="tel" id="phone" name="phone"  placeholder="Your Phone Number"required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="experience" class="form-label">Experience Level</label>
-                            <select class="form-control" id="experience" name="experience" required>
-                                <option value="" disabled selected>Select your experience level</option>
-                                <option value="novice">Novice</option>
-                                <option value="intermediate">Intermediate</option>
-                                <option value="advanced">Advanced</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="hackathons" class="form-label">Number of Hackathons Attended</label>
-                            <input class="form-control" type="number" id="hackathons" name="hackathons"  placeholder="Number of Hackathons" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="dietary" class="form-label">Dietary Restrictions</label>
-                            <input class="form-control" type="text" id="dietary" name="dietary" placeholder="Dietary Restrictions">
-                        </div>
-                        <div class="col-lg-12 text-center">
-                            <button class="btn btn-primary btn-xl text-uppercase" id="sendParticipantFormButton" type="submit">Submit</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                </div>
-                <div class="col-md-4">
-                    <ul class="list-inline social-buttons">
-                        <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="fa fa-facebook-f"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
 
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/script.min.js"></script>
@@ -145,6 +133,13 @@
                 }
             }).catch(error => {
                 alert('Error: ' + error.message);
+            });
+        });
+        document.addEventListener("DOMContentLoaded", function() {
+            const navToggle = document.querySelector('.navbar-toggler');
+            const navDropdown = document.querySelector('.dropdown_menu');
+            navToggle.addEventListener('click', function() {
+                navDropdown.classList.toggle('open');
             });
         });
     </script>

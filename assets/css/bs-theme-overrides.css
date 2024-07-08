@@ -199,6 +199,7 @@ header.masthead {
   position: absolute;
   top: 25px; /* Adjust as needed */
   right: 30px; /* Adjust as needed */
+  width:60px;
 }
 .navbar-logo {
   position: absolute;
