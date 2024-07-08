@@ -169,7 +169,7 @@ header.masthead {
 
 .dropdown_menu.open {
   display: block; /* Show when open */
-  height: 190px;
+  height: 240px;
 }
 
 .dropdown_menu li {
