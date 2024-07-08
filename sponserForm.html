@@ -78,8 +78,9 @@
     <script src="assets/js/bootstrap.bundle.min.js"></script>
 
     <script>
-        function submitForm() {
-            const form = document.getElementById('myForm');
+        document.getElementById('sponsorForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const form = event.target;
             const formData = new FormData(form);
             
             fetch('https://script.google.com/macros/s/AKfycbxfgZOVHUxMzBDBl9IR_-_EcDncccq4rWtRvtT450KoRJb90f6emp86Cbr4OlpAc9KLyg/exec', {
@@ -94,7 +95,7 @@
             }).catch(error => {
                 alert('Error: ' + error.message);
             });
-        }
+        });
     </script>
 
 </body>
