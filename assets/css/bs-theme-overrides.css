@@ -187,3 +187,23 @@ header.masthead {
     display: flex !important; /* Ensure the navbar collapse is always shown on large screens */
   }
 }
+.navbar-brand {
+  width: 100%;
+  height: 100%;
+}
+
+::placeholder {
+  color:white;  
+}
+.navbar-toggler {
+  position: absolute;
+  top: 25px; /* Adjust as needed */
+  right: 30px; /* Adjust as needed */
+}
+.navbar-logo {
+  position: absolute;
+  top: 10px; /* Adjust as needed */
+  left: 10px; /* Adjust as needed */
+  width: auto; /* Maintain aspect ratio */
+  height: 100%; /* Set a fixed height */
+}
