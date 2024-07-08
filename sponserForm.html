@@ -37,6 +37,7 @@
                 </div>
             </div>
         </div>
+    </header>
 
     <section class="py-5">
         <div class="container">
@@ -67,7 +68,6 @@
             </div>
         </div>
     </section>
-</header>
 
     <footer class="py-4 bg-dark text-white-50">
         <div class="container text-center">
@@ -88,6 +88,7 @@
                 body: formData
             }).then(response => {
                 if (response.ok) {
+                    alert('Form submitted successfully!');
                     window.location.href = 'thankyou.html'; // Redirect to thankyou.html after successful submission
                 } else {
                     alert('Form submission failed.');
