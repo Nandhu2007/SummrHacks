@@ -329,6 +329,84 @@
             </div> -->
         </div>
     </section>
+    <!-- FAQ Section -->
+    <section id="faq" class="bg-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading text-uppercase">Frequently Asked Questions</h2>
+                    <h3 class="section-subheading text-muted">Here are some of the common questions we get asked</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                    How much is the admission fees?
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Admission to the event is completely free of charge for all attendees. We believe in making our events accessible to everyone, so there's no cost to enter.                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Do I have to bring my own food?
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    No, you don't need to bring your own food. We will be providing a variety of refreshments and meals throughout the event. Our goal is to ensure that all attendees have a great experience without worrying about food."
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Do you need to know how to code?
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    No, you do not need to know how to code. We will be providing seminars and have high school and college volunteers who will assist you throughout the process.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingFour">
+                                <button class="accordion-button collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    How do I form my group?
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Groups will have a maximum of 5 members and will be formed on the day of the hackathon. You are welcome to decide on your group members beforehand. Our team will facilitate the group formation process to ensure everyone has a chance to participate.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingFive">
+                                <button class="accordion-button collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                    What if I don't have a team
+                                </button>
+                            </h2>
+                            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    If you don't have a team, don't worry! We'll help you find teammates on the day of the hackathon. Our team will facilitate the group formation process to ensure that everyone has an opportunity to participate, even if they come alone.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
     <section class="bg-light" id="team">
         <div class="container">
             <div class="row">
@@ -445,8 +523,27 @@
             </div>
         </div>
     </footer>
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/script.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const accordionItems = document.querySelectorAll('.accordion-button');
+            
+            accordionItems.forEach(item => {
+                item.addEventListener('click', function () {
+                    const target = document.querySelector(this.dataset.target);
+
+                    if (target.classList.contains('show')) {
+                        target.classList.remove('show');
+                    } else {
+                        document.querySelectorAll('.accordion-collapse').forEach(collapse => {
+                            collapse.classList.remove('show');
+                        });
+                        target.classList.add('show');
+                    }
+                });
+            });
+        });
+    </script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const navToggle = document.querySelector('.navbar-toggler');
