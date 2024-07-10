@@ -237,7 +237,13 @@
                             </div>
                             <div class="mb-3">
                                 <label for="dietary" class="form-label">T-Shirt Size</label>
-                                <input class="form-control" type="text" id="dietary" name="tshirt" placeholder="S,M,L,XL etc">
+                                <select class="form-control" id="experience" name="experience" required>
+                                    <option value="XS" disabled selected>XS</option>                                    
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
                             </div>
                             <div class="col-lg-12 text-center">
                                 <button class="btn btn-primary btn-xl text-uppercase" id="sendParticipantFormButton" type="submit">Submit</button>
