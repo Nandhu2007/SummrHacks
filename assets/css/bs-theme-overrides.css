@@ -374,10 +374,6 @@ button:hover .star-6 {
   box-shadow: none;
 }
 
-.accordion-button:not(.collapsed) {
-  color: #007bff;
-  background-color: #e9ecef;
-}
 
 .accordion-item {
   border: none;
@@ -387,4 +383,16 @@ button:hover .star-6 {
 .accordion-body {
   font-size: 1rem;
   color: #343a40;
+}
+.loading-icon {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
 }
