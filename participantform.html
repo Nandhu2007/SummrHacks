@@ -21,6 +21,11 @@
     </style>
 </head>
 <body id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="34">
+    <div id="loadingIcon" class="loading-icon" style="display: none;">
+        <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
     <nav class="navbar navbar-expand-lg fixed-top bg-dark navbar-dark" id="mainNav">
         <div class="container">
             <a class="navbar-brand" href="#page-top">
@@ -104,6 +109,10 @@
                                 <label for="dietary" class="form-label">Dietary Restrictions</label>
                                 <input class="form-control" type="text" id="dietary" name="dietary" placeholder="Dietary Restrictions">
                             </div>
+                            <div class="mb-3">
+                                <label for="dietary" class="form-label">T-Shirt Size</label>
+                                <input class="form-control" type="text" id="dietary" name="T-shirt Size" placeholder="S,M,L,XL etc">
+                            </div>
                             <div class="col-lg-12 text-center">
                                 <button class="btn btn-primary btn-xl text-uppercase" id="sendParticipantFormButton" type="submit">Submit</button>
                             </div>
@@ -117,24 +126,34 @@
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/script.min.js"></script>
     <script>
-        document.getElementById('participant-form').addEventListener('submit', function(event) {
+        document.getElementById('participantForm').addEventListener('submit', function(event) {
             event.preventDefault();
             const form = event.target;
             const formData = new FormData(form);
-            
+    
+            // Show loading icon
+            document.getElementById('loadingIcon').style.display = 'flex';
+    
             fetch('https://script.google.com/macros/s/AKfycby5IBP51OhVpjxrDpu4WRDWY-wukVULbqrEym6uFqAVM0FiXgB7Oamkai9g4_c6CEth/exec', {
                 method: 'POST',
                 body: formData
             }).then(response => {
+                // Hide loading icon
+                document.getElementById('loadingIcon').style.display = 'none';
+    
                 if (response.ok) {
                     window.location.href = 'thankyou.html'; // Redirect to thankyou.html after successful submission
                 } else {
                     alert('Form submission failed.');
                 }
             }).catch(error => {
+                // Hide loading icon
+                document.getElementById('loadingIcon').style.display = 'none';
+    
                 alert('Error: ' + error.message);
             });
         });
+    
         document.addEventListener("DOMContentLoaded", function() {
             const navToggle = document.querySelector('.navbar-toggler');
             const navDropdown = document.querySelector('.dropdown_menu');
@@ -143,5 +162,6 @@
             });
         });
     </script>
+    
 </body>
 </html>

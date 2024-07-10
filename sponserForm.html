@@ -38,11 +38,28 @@
                 margin-right: 1rem;
             }
         }
-    </style>
 
+        .loading-icon {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+    </style>
 
 </head>
 <body>
+    <div id="loadingIcon" class="loading-icon" style="display: none;">
+        <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
     <nav class="navbar navbar-expand-lg fixed-top bg-dark navbar-dark" id="mainNav">
         <div class="container">
             <a class="navbar-brand" href="#page-top">
@@ -54,16 +71,14 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto text-uppercase">
                     <li class="nav-item"><a class="nav-link" href="index.html">Back</a></li>
-
                 </ul>
             </div>
         </div>
         <div class="dropdown_menu">
             <li class="nav-item"><a class="nav-link" href="index.html">Back</a></li>
-
         </div>
     </nav>
-    <header class="masthead" style="background-image: url('assets/gradient-svg.svg');">
+    <header class="masthead" style="height: 100%; background-image: url('assets/gradient-svg.svg');">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-12 text-center">
@@ -72,7 +87,6 @@
                 </div>
             </div>
         </div>
-
     <section class="py-5">
         <div class="container">
             <div class="row">
@@ -87,12 +101,16 @@
                             <input type="email" class="form-control" id="email" name="email" required>
                         </div>
                         <div class="mb-3">
-                            <label for="name" class="form-label">Name</label>
+                            <label for="name" class="form-label">Your Name</label>
                             <input type="text" class="form-control" id="name" name="name" required>
                         </div>
                         <div class="mb-3">
                             <label for="position" class="form-label">Position</label>
                             <input type="text" class="form-control" id="position" name="position" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="position" class="form-label">Phone Number (Optional) </label>
+                            <input type="text" class="form-control" id="position" name="phone" >
                         </div>
                         <div class="text-center">
                             <button type="submit" class="btn btn-primary">Submit</button>
@@ -104,7 +122,7 @@
     </section>
 </header>
 
-    <footer class="py-4 bg-dark text-white-50">
+    <footer class="py-4 bg-dark text-white-50" style="padding-top: 100px;">
         <div class="container text-center">
             <small>Copyright &copy; Brand 2023</small>
         </div>
@@ -118,20 +136,29 @@
             const form = event.target;
             const formData = new FormData(form);
             
-            fetch('https://script.google.com/macros/s/AKfycbxfgZOVHUxMzBDBl9IR_-_EcDncccq4rWtRvtT450KoRJb90f6emp86Cbr4OlpAc9KLyg/exec', {
+            // Show loading icon
+            document.getElementById('loadingIcon').style.display = 'flex';
+
+            fetch('https://script.google.com/macros/s/AKfycbwCBNXs5VUP6mcvddL190HD10KjSjsP_z-HFfbX2EyAXcSWTaNjMJV760uIxtYaDsNEZg/exec', {
                 method: 'POST',
                 body: formData
             }).then(response => {
+                // Hide loading icon
+                document.getElementById('loadingIcon').style.display = 'none';
+
                 if (response.ok) {
-                    alert('Form submitted successfully!');
                     window.location.href = 'thankyou.html'; // Redirect to thankyou.html after successful submission
                 } else {
-                    alert('Form submission failed.');
+                    connsole.log("form submmission failed.")
                 }
             }).catch(error => {
+                // Hide loading icon
+                document.getElementById('loadingIcon').style.display = 'none';
+
                 alert('Error: ' + error.message);
             });
         });
+
         document.addEventListener("DOMContentLoaded", function() {
             const navToggle = document.querySelector('.navbar-toggler');
             const navDropdown = document.querySelector('.dropdown_menu');

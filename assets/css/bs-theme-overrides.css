@@ -92,30 +92,21 @@ header.masthead {
 
 .input-group {
   display: flex;
-  margin-left: 5%;
+  margin-left: 29%;
   margin-top: 40px;
+  text-align: center;
 
 }
 
-.input {
-  min-height: 50px;
-  width: 60%; /* Adjust the maximum width */
-  padding: 0 1rem;
-  color: #fff;
-  font-size: 15px;
-  border: 1px solid #5e4dcd;
-  border-radius: 6px 0 0 6px;
-  background-color: transparent;
-  font-weight: bolder;
-}
+
 
 .button--submit {
   width: 40%;
   min-height: 50px;
-  padding: .5em 1em;
+  padding: 1em 1em;
   border: none;
-  border-radius: 0 6px 6px 0;
   background-color: #5e4dcd;
+  border-radius: 15px ;
   color: #fff;
   font-size: 15px;
   cursor: pointer;
