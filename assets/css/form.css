@@ -114,7 +114,6 @@
     cursor: pointer;
     transition: background-color .3s ease-in-out;
     line-height: 50px; /* Center text vertically if needed */
-    text-decoration: none;
 }
 
 .button--submit:hover {
