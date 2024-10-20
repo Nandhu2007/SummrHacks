@@ -1,398 +1,299 @@
+
+/* Navbar styling with custom color (using color from the uploaded image) */
 .navbar {
-  background-color: rgb(255, 255, 255) !important;
-  height:80px;
-}
-
-.cssbuttons-io-button {
-  background: #a370f0;
-  color: white;
-  font-family: inherit;
-  padding-left: 1.2em;
-  font-size: 17px;
-  font-weight: 500;
-  border-radius: 0.9em;
-  border: none;
-  letter-spacing: 0.05em;
+  background-color: #8b2000 !important; /* Custom color */
+  height: 80px;
+  border-bottom: 2px solid #e6e6e6;
   display: flex;
   align-items: center;
-  box-shadow: inset 0 0 1.6em -0.6em #714da6;
-  overflow: hidden;
-  position: relative;
-  height: 2.8em;
-  padding-right: 3.3em;
-  cursor: pointer;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+.navbar-nav .nav-item .nav-link {
+  color: #ffffff !important; /* Ensure white font for nav items */
+  font-size: 16px;
+  padding: 10px 15px;
+  transition: color 0.3s ease;
+  display: inline-block;
+}
+.navbar-nav .nav-item .nav-link:hover {
+  color: #ffcc00 !important;
 }
 
-.cssbuttons-io-button .icon {
-  background: white;
-  margin-left: 1em;
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 2.2em;
-  width: 2.2em;
-  border-radius: 0.7em;
-  box-shadow: 0.1em 0.1em 0.6em 0.2em #7b52b9;
-  right: 0.3em;
-  transition: all 0.3s;
+/* Fix for the logo positioning */
+.navbar-logo {
+  height: 50px; /* Ensure consistent height */
+  padding-right: 15px;
 }
 
-.cssbuttons-io-button:hover .icon {
-  width: calc(100% - 0.6em);
-}
-
-.cssbuttons-io-button .icon svg {
-  width: 1.1em;
-  transition: transform 0.3s;
-  color: #7b52b9;
-}
-
-.cssbuttons-io-button:hover .icon svg {
-  transform: translateX(0.1em);
-}
-
-.cssbuttons-io-button:active .icon {
-  transform: scale(0.95);
-}
-
-.icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-.navbar-brand { 
-    font-family: "Open Sans" !important;
-    font-weight: bolder;
-  
-}
-    
-
-header.masthead {
-  margin-top: 70px; 
+/* Mobile navbar toggle adjustments */
+@media (max-width: 768px) {
+  .masthead img[alt="Logo"] {
+    display: none;
 }
 .masthead {
-  width: 100%;
-  height: 600px;
-  padding: 40px;
-  box-sizing: border-box;
-  background-size: 400% 400%;
+  height: auto; /* Allow the height to adjust automatically */
+  min-height: 500px; /* Ensure the height doesn't shrink too much */
+  padding-top: 100px; /* Reduce padding for smaller screens */
+}
+  .navbar-nav {
+    background-color: #8b2000; /* Match navbar color */
+    width: 100%;
+    text-align: center;
+    padding-top: 10px;
+  }
+  .navbar-nav .nav-item .nav-link {
+    padding: 10px 0;
+    color: #ffffff !important;
+  }
+  .navbar-toggler {
+    border-color: #ffffff;
+  }
+  .navbar-toggler-icon {
+    color: #ffffff;
+  }
+  .masthead h1 {
+    font-size: 2em; /* Adjust to make the text smaller but still visible */
+}
 }
 
-
-.title h1{
-  font-size: 4.5em; 
-  line-height: 1.5;
-   
-}
-.email h1 { 
-  font-size: 2em !important;
-}
-
-.input-group {
-  display: flex;
-  margin-left: 29%;
-  margin-top: 40px;
-  text-align: center;
-
-}
-
-
-
+/* Clean and simple "Sign Up Now" button */
 .button--submit {
-  width: 40%;
-  min-height: 50px;
-  padding: 1em 1em;
+  width: 150px;
+  padding: 12px 25px;
+  background-color: #0044cc;
   border: none;
-  background-color: #5e4dcd;
-  border-radius: 15px ;
+  border-radius: 8px;
   color: #fff;
-  font-size: 15px;
+  font-size: 14px;
+  font-weight: bold;
   cursor: pointer;
-  transition: background-color .3s ease-in-out;
+  transition: background-color 0.3s ease;
 }
-
 .button--submit:hover {
-  background-color: #5e5dcd;
+  background-color: #003399;
 }
 
-.input:focus, .input:focus-visible {
-  border-color: #3898EC;
-  outline: none;
-}
-.typewriter p.lead {
-  padding-bottom: 15px;
-  overflow: hidden; /* Ensures text is not visible outside p container */
-  white-space: nowrap; /* Keeps text on one line */
-  margin: 0 auto; /* Centers text */
-  letter-spacing: .15em; /* Adjusts letter spacing for better readability */
-  animation: typing 4s steps(60, end);
-}
-
-@keyframes typing {
-  from {
-      width: 0;
-  }
-
-  to {
-      width: 100%;
-  }
-}
-.navbar-dark .navbar-nav .nav-item .nav-link {
-  color: black !important;
-}
-.navbar-logo {
-  height: 50px; /* Set the desired height */
-  max-height: 100%; /* Ensure it doesn't exceed the container's height */
-}
+/* Fix for mobile menu to use white font */
 .dropdown_menu {
-  display: none; /* Hide by default */
+  display: none;
   position: absolute;
-  right: 2rem;
-  top: 60px;
-  width: 300px; 
-  background-color: rgb(235, 187, 84);
-  backdrop-filter: blur(15px);
-  overflow: hidden;
-  transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  right: 20px;
+  top: 80px;
+  width: 250px;
+  background-color: #8b2000; /* Match navbar color */
+  border: 1px solid #ffcc00;
+  border-radius: 8px;
+  z-index: 10;
+  padding: 15px;
+  color: #fff;
 }
 
 .dropdown_menu.open {
-  display: block; /* Show when open */
-  height: 280px;
+  display: block;
 }
 
 .dropdown_menu li {
-  padding: 0.7rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 10px;
+  text-align: left;
+  color: #ffffff;
 }
-@media (min-width: 992px) {
-  .dropdown_menu {
-    display: none !important;
-  }
-
-  .navbar-collapse {
-    display: flex !important; /* Ensure the navbar collapse is always shown on large screens */
-  }
-}
-.navbar-brand {
-  width: 100%;
-  height: 100%;
+.events-section {
+  padding: 60px 0;
+  background-color: #f9f9f9;
 }
 
-::placeholder {
-  color:white;  
-}
-.navbar-toggler {
-  position: absolute;
-  top: 25px; /* Adjust as needed */
-  right: 30px; /* Adjust as needed */
-  width:60px;
-}
-.navbar-logo {
-  position: absolute;
-  top: 10px; /* Adjust as needed */
-  left: 10px; /* Adjust as needed */
-  width: auto; /* Maintain aspect ratio */
-  height: 100%; /* Set a fixed height */
-}
-button {
-  width: 150px;
-  position: relative;
-  padding: 12px 35px;
-  background: #fec195;
-  font-size: 14px; /* Increase the font size */
-  font-weight: 500;
-  color: #181818;
-  border: 3px solid #fec195;
-  border-radius: 8px;
-  box-shadow: 0 0 0 #fec1958c;
-  transition: all 0.3s ease-in-out;
-  cursor: pointer;
-}
-
-
-.star-1 {
-  position: absolute;
-  top: 20%;
-  left: 20%;
-  width: 25px;
-  height: auto;
-  filter: drop-shadow(0 0 0 #fffdef);
-  z-index: -5;
-  transition: all 1s cubic-bezier(0.05, 0.83, 0.43, 0.96);
-}
-
-.star-2 {
-  position: absolute;
-  top: 45%;
-  left: 45%;
-  width: 15px;
-  height: auto;
-  filter: drop-shadow(0 0 0 #fffdef);
-  z-index: -5;
-  transition: all 1s cubic-bezier(0, 0.4, 0, 1.01);
-}
-
-.star-3 {
-  position: absolute;
-  top: 40%;
-  left: 40%;
-  width: 5px;
-  height: auto;
-  filter: drop-shadow(0 0 0 #fffdef);
-  z-index: -5;
-  transition: all 1s cubic-bezier(0, 0.4, 0, 1.01);
-}
-
-.star-4 {
-  position: absolute;
-  top: 20%;
-  left: 40%;
-  width: 8px;
-  height: auto;
-  filter: drop-shadow(0 0 0 #fffdef);
-  z-index: -5;
-  transition: all 0.8s cubic-bezier(0, 0.4, 0, 1.01);
-}
-
-.star-5 {
-  position: absolute;
-  top: 25%;
-  left: 45%;
-  width: 15px;
-  height: auto;
-  filter: drop-shadow(0 0 0 #fffdef);
-  z-index: -5;
-  transition: all 0.6s cubic-bezier(0, 0.4, 0, 1.01);
-}
-
-.star-6 {
-  position: absolute;
-  top: 5%;
-  left: 50%;
-  width: 5px;
-  height: auto;
-  filter: drop-shadow(0 0 0 #fffdef);
-  z-index: -5;
-  transition: all 0.8s ease;
-}
-
-button:hover {
-  background: transparent;
-  color: #fec195;
-  box-shadow: 0 0 25px #fec1958c;
-}
-
-button:hover .star-1 {
-  position: absolute;
-  top: -80%;
-  left: -30%;
-  width: 25px;
-  height: auto;
-  filter: drop-shadow(0 0 10px #fffdef);
-  z-index: 2;
-}
-
-button:hover .star-2 {
-  position: absolute;
-  top: -25%;
-  left: 10%;
-  width: 15px;
-  height: auto;
-  filter: drop-shadow(0 0 10px #fffdef);
-  z-index: 2;
-}
-
-button:hover .star-3 {
-  position: absolute;
-  top: 55%;
-  left: 25%;
-  width: 5px;
-  height: auto;
-  filter: drop-shadow(0 0 10px #fffdef);
-  z-index: 2;
-}
-
-button:hover .star-4 {
-  position: absolute;
-  top: 30%;
-  left: 80%;
-  width: 8px;
-  height: auto;
-  filter: drop-shadow(0 0 10px #fffdef);
-  z-index: 2;
-}
-
-button:hover .star-5 {
-  position: absolute;
-  top: 25%;
-  left: 115%;
-  width: 15px;
-  height: auto;
-  filter: drop-shadow(0 0 10px #fffdef);
-  z-index: 2;
-}
-
-button:hover .star-6 {
-  position: absolute;
-  top: 5%;
-  left: 60%;
-  width: 5px;
-  height: auto;
-  filter: drop-shadow(0 0 10px #fffdef);
-  z-index: 2;
-}
-
-.fil0 {
-  fill: #fffdef;
-}
-
-/* Custom Styles for FAQ Section */
-#faq .section-heading {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-#faq .section-subheading {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  color: #6c757d;
-  
-}
-
-.accordion-button {
-  background-color: #f8f9fa;
+.section-heading {
+  text-align: center;
+  font-size: 2.5em;
   font-weight: bold;
-
+  margin-bottom: 50px;
+  color: #333;
 }
 
-.accordion-button:focus {
-  box-shadow: none;
-}
-
-
-.accordion-item {
-  border: none;
-  padding-bottom: 50px;
-}
-
-.accordion-body {
-  font-size: 1rem;
-  color: #343a40;
-}
-.loading-icon {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.8);
+.event-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.event-box {
+  background-color: #ffffff;
+  width: 30%;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.event-box:hover {
+  transform: scale(1.05);
+}
+
+.event-box h4 {
+  font-size: 1.6em;
+  margin-bottom: 20px;
+  color: #8b2000;
+}
+
+.event-box p {
+  font-size: 1em;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Custom shapes for each event */
+.circle {
+  width: 80px;
+  height: 80px;
+  background-color: #FFB74D;
+  border-radius: 50%;
+  margin: 0 auto 20px auto;
+}
+
+.square {
+  width: 80px;
+  height: 80px;
+  background-color: #FF7043;
+  margin: 0 auto 20px auto;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+  border-bottom: 70px solid #FFCE93;
+  margin: 0 auto 20px auto;
+}
+
+@media (max-width: 768px) {
+  .event-box {
+      width: 100%;
+      margin-bottom: 20px;
+  }
+}
+
+/* Additional Navbar and page styles */
+.navbar {
+  background-color: #8b2000;
+  padding: 10px;
+}
+
+.navbar .navbar-brand img {
+  height: 50px;
+}
+
+.navbar-nav .nav-link {
+  color: white !important;
+  font-size: 1.2em;
+  margin-right: 20px;
+}
+
+.navbar-toggler {
+  border-color: #fff;
+}
+
+.footer {
+  padding: 20px;
+  background-color: #333;
+  color: white;
+  text-align: center;
+}
+
+.footer a {
+  color: #ffcc00;
+  text-decoration: none;
+}
+
+/* Register Now button */
+.register-now-container {
+  text-align: left;  /* Change from 'center' to 'left' */
+  margin-top: 40px;
+}
+
+.register-now-btn {
+  background-color: #FF7043;
+  color: white;
+  padding: 15px 30px;  /* Adjust padding for better size */
+  border-radius: 8px;
+  font-size: 1.2em;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.register-now-btn:hover {
+  background-color: #FF5722;
+}
+.timeline-section {
+  background-color: #f9f9f9;
+  padding: 60px 0;
+}
+
+.timeline-tabs {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.tab-btn {
+  background-color: #8b2000; /* Match your theme color */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.tab-btn.active, .tab-btn:hover {
+  background-color: #b23a00; /* Darker shade for active tab */
+}
+
+.timeline-content {
+  display: none;
+}
+
+.timeline-content.active {
+  display: block;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.timeline-item {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+}
+
+.timeline-item h4 {
+  font-size: 1.2em;
+  color: #8b2000; /* Match the theme */
+  margin-bottom: 5px;
+}
+
+.timeline-item p {
+  font-size: 0.9em;
+  color: #555;
+}
+
+@media (max-width: 768px) {
+  .timeline {
+      gap: 15px;
+  }
+
+  .timeline-item {
+      padding: 15px;
+  }
 }
